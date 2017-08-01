@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="standard_button_text">Standard Unbundle</string>
+    <string name="gcm_button_text">GCM Unbundle</string>
+    <string name="int_display">%d</string>
+</resources>
