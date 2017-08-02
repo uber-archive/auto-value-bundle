@@ -1,2 +1,2 @@
-include ':sample-app'
+include ':sample'
 include ':autovalue-bundle-extension'

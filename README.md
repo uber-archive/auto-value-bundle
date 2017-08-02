@@ -10,7 +10,7 @@ Bundles are used to pass data along with intents, between activities, services, 
 
 Add Gradle dependency:
 
-```
+```Java
 dependencies {
   annotationProcessor "com.google.auto.value:auto-value:1.4.1"
     annotationProcessor "com.uber.autovalue-bundle-extension:1.0.0"
@@ -23,7 +23,7 @@ dependencies {
 
 Simply include the Autovalue: Bundle Extension in your project and add a constructor to your abstract value class that calls the unbundle method.
 
-```
+```Java
 @AutoValue
 public abstract class Foo {
 
@@ -37,7 +37,7 @@ public abstract class Foo {
 ### GCM Bundle
 Additionally there is an annotation @GCMBundle which is used to denote that a bundle was created and attached to an intent from GCM.  This means that the data is stored in String-String key-value pairs.  Using the @GCMBundle annotation will infer the type from the return type of the value class methods and handle the conversion and type casting for you.
 
-```
+```Java
 @AutoValue
 @GCMBundle
 public abstract class Foo {
