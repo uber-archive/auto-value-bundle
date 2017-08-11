@@ -4,7 +4,7 @@ An extension for Google's [AutoValue](https://github.com/google/auto) that suppo
 
 ## Motivation
 
-Bundles are used to pass data along with intents, between activities, services, from GCM, etc.  However, converting that data from a bundle to a Java object involves a lot of repetitive and error prone code.
+Bundles are used to pass data along with intents and services, between activities, and from GCM, among other reasons.  However, converting that data from a bundle to a Java object involves a lot of repetitive and error-prone code.
 
 ## Download
 
@@ -35,7 +35,7 @@ public abstract class Foo {
 }
 ```
 ### GCM Bundle
-Additionally there is an annotation @GCMBundle which is used to denote that a bundle was created and attached to an intent from GCM.  This means that the data is stored in String-String key-value pairs.  Using the @GCMBundle annotation will infer the type from the return type of the value class methods and handle the conversion and type casting for you.
+Additionally, there is an annotation @GCMBundle which is used to denote that a bundle was created and attached to an intent from GCM.  This means that the data is stored in String-String key-value pairs.  Using the @GCMBundle annotation will infer the type from the return type of the value class methods and handle the conversion and type casting for you.
 
 ```Java
 @AutoValue
@@ -52,7 +52,7 @@ public abstract class Foo {
 
 ## Contributors
 
-We'd love for you to contribute to our open source projects. Before we can accept your contributions, we kindly ask you to sign our [Uber Contributor License Agreement](https://docs.google.com/a/uber.com/forms/d/1pAwS_-dA1KhPlfxzYLBqK6rsSWwRwH95OCCZrcsY5rk/viewform).
+We'd love for you to contribute to our open source projects. Before we can accept your contributions, however, we kindly ask you to sign our [Uber Contributor License Agreement](https://docs.google.com/a/uber.com/forms/d/1pAwS_-dA1KhPlfxzYLBqK6rsSWwRwH95OCCZrcsY5rk/viewform).
 
 - If you **find a bug**, open an issue or submit a fix via a pull request.
 - If you **have a feature request**, open an issue or submit an implementation via a pull request
