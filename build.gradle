@@ -19,14 +19,14 @@ subprojects {
         repositories {
             jcenter()
             maven { url 'https://maven.google.com' }
-            mavenCentral()
+            maven { url 'https://mvnrepository.com/artifact/com.sun/tools'}
         }
     }
 
     repositories {
         jcenter()
         maven { url 'https://maven.google.com' }
-        mavenCentral()
+        maven { url 'https://mvnrepository.com/artifact/com.sun/tools'}
     }
 
     apply plugin: 'checkstyle'
