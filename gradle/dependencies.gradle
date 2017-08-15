@@ -15,7 +15,7 @@
  */
 
 def versions = [
-        support: '25.0.1'
+        support: '25.1.0'
 ]
 
 def build = [
