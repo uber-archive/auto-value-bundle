@@ -51,7 +51,7 @@ def support = [
 def test = [
         compileTesting: "com.google.testing.compile:compile-testing:0.11",
         junit         : 'junit:junit:4.12',
-        tools         : "com.sun:tools:1.8.0-112",
+        tools         : "\$JAVA_HOME/../lib/tools.jar",
 ]
 
 ext.deps = [
