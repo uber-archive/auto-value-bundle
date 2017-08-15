@@ -32,5 +32,5 @@ dependencies {
 
     testCompile deps.apt.androidApi
     testCompile deps.test.compileTesting
-    testCompile deps.test.tools
+    testCompile files("${System.properties['java.home']}/../lib/tools.jar")
 }
