@@ -1,4 +1,4 @@
-Contributing to Uber's Android Template
+Contributing to Uber's Auto-value-bundle
 =======================
 
 Uber welcomes contributions of all kinds and sizes. This includes everything from from simple bug reports to large features.

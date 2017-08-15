@@ -1,4 +1,4 @@
-# Project Name [![Build Status](https://travis-ci.org/uber/your-project.svg?branch=master)](https://travis-ci.org/uber/your-project)
+# Auto-value-bundle [![Build Status](https://travis-ci.com/uber/auto-value-bundle.svg?branch=master)](https://travis-ci.org/uber/your-project)
 
 An extension for Google's [AutoValue](https://github.com/google/auto) that supports Android Bundle object.
 

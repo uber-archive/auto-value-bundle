@@ -107,3 +107,6 @@ tmp/
 
 # kotlin
 annotations/
+
+#github
+.github/
