@@ -1,4 +1,4 @@
-# Auto-value-bundle [![Build Status](https://travis-ci.com/uber/auto-value-bundle.svg?branch=master)](https://travis-ci.org/uber/auto-value-bundle)
+# Auto-value-bundle [![Build Status](https://travis-ci.com/uber/auto-value-bundle.svg?branch=master)](https://travis-ci.com/uber/auto-value-bundle)
 
 An extension for Google's [AutoValue](https://github.com/google/auto) that supports Android Bundle object.
 
