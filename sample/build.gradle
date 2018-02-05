@@ -15,58 +15,58 @@
  */
 
 buildscript {
-    dependencies {
-        classpath deps.build.gradlePlugins.android
-    }
+  dependencies {
+    classpath deps.build.gradlePlugins.android
+  }
 }
 
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion deps.build.compileSdkVersion
-    buildToolsVersion deps.build.buildToolsVersion
+  compileSdkVersion deps.build.compileSdkVersion
+  buildToolsVersion deps.build.buildToolsVersion
 
-    defaultConfig {
-        applicationId "com.uber.myapplication"
-        minSdkVersion deps.build.minSdkVersion
-        targetSdkVersion deps.build.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }
+  defaultConfig {
+    applicationId "com.uber.myapplication"
+    minSdkVersion deps.build.minSdkVersion
+    targetSdkVersion deps.build.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
 
-    // Setup a simple lint config for an android app/library.
-    lintOptions {
-        abortOnError true
-        lintConfig rootProject.file('config/lint/lint.xml')
-        disable 'InvalidPackage'
-    }
+  // Setup a simple lint config for an android app/library.
+  lintOptions {
+    abortOnError true
+    lintConfig rootProject.file('config/lint/lint.xml')
+    disable 'InvalidPackage'
+  }
 }
 
 // This is required to run checkstyle on an android app/library.
 task checkstyle(type: Checkstyle) {
-    source 'src'
-    include '**/*.java'
-    exclude '**/gen/**'
+  source 'src'
+  include '**/*.java'
+  exclude '**/gen/**'
 
-    classpath = files()
+  classpath = files()
 }
 check.dependsOn 'checkstyle'
 
 
 dependencies {
-    annotationProcessor deps.apt.autoValue
-    annotationProcessor project(":autovalue-bundle-extension")
+  annotationProcessor deps.apt.autoValue
+  annotationProcessor project(":autovalue-bundle-extension")
 
-    compile deps.support.appcompat
-    compile deps.apt.autoValue
-    compile deps.external.gson
+  implementation deps.support.appcompat
+  implementation deps.apt.autoValue
+  implementation deps.external.gson
 
-    provided project(":autovalue-bundle-extension")
+  compileOnly project(":autovalue-bundle-extension")
 
-    testCompile deps.test.junit
+  testCompile deps.test.junit
 }
 

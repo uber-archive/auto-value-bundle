@@ -14,23 +14,27 @@
  * limitations under the License.
  */
 
-apply plugin: 'java'
+import org.gradle.internal.jvm.Jvm
+
+plugins {
+  id 'java-library'
+}
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
-    compile deps.apt.androidApi
-    compile deps.apt.autoValue
-    compile deps.apt.autoCommon
-    compile deps.apt.javapoet
-    compile deps.support.annotations
-    compile deps.external.gson
-    compile deps.build.guava
+  implementation deps.apt.androidApi
+  implementation deps.apt.autoValue
+  implementation deps.apt.autoCommon
+  implementation deps.apt.javapoet
+  implementation deps.support.annotations
+  implementation deps.external.gson
+  implementation deps.build.guava
 
-    compileOnly deps.apt.autoService
+  compileOnly deps.apt.autoService
 
-    testCompile deps.apt.androidApi
-    testCompile deps.test.compileTesting
-    testCompile files("${System.properties['java.home']}/../lib/tools.jar")
+  testCompile deps.apt.androidApi
+  testCompile deps.test.compileTesting
+  testCompile files(Jvm.current().getToolsJar())
 }
