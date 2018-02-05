@@ -34,9 +34,9 @@ dependencies {
 
   compileOnly deps.apt.autoService
 
-  testCompile deps.apt.androidApi
-  testCompile deps.test.compileTesting
-  testCompile files(Jvm.current().getToolsJar())
+  testImplementation deps.apt.androidApi
+  testImplementation deps.test.compileTesting
+  testImplementation files(Jvm.current().getToolsJar())
 }
 
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
