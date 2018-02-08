@@ -3,16 +3,10 @@ package com.uber.bundle.extension;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.SparseArray;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;
-
-import com.uber.bundle.extension.UnknownObject;
-import com.uber.bundle.extension.GCMBundle;
-import com.uber.bundle.extension.TestEnum;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 @AutoValue
 @GCMBundle

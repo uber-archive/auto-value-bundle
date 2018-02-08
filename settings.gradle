@@ -1,2 +1,2 @@
+include ':auto-value-bundle'
 include ':sample'
-include ':autovalue-bundle-extension'

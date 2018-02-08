@@ -15,32 +15,33 @@
  */
 
 subprojects {
-    buildscript {
-        repositories {
-            jcenter()
-            maven { url 'https://maven.google.com' }
-        }
-    }
-
+  buildscript {
     repositories {
-        jcenter()
-        maven { url 'https://maven.google.com' }
+      jcenter()
+      google()
     }
+  }
 
-    apply plugin: 'checkstyle'
+  repositories {
+    jcenter()
+    google()
+  }
 
-    checkstyle { -> rootProject
-        configFile rootProject.file('config/checkstyle/checkstyle.xml')
-    }
+  apply plugin: 'checkstyle'
+
+  checkstyle { ->
+    rootProject
+    configFile rootProject.file('config/checkstyle/checkstyle.xml')
+  }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.5.0'
-    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+  gradleVersion = '4.5.1'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
 
 task clean(type: Delete) {
-    delete rootProject.buildDir
+  delete rootProject.buildDir
 }
 
 apply from: 'gradle/dependencies.gradle'
