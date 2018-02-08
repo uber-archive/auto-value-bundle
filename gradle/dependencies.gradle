@@ -15,47 +15,48 @@
  */
 
 def versions = [
-    support: '27.0.2'
+        support: '25.1.0'
 ]
 
 def build = [
-    buildToolsVersion: '27.0.3',
-    compileSdkVersion: 27,
-    ci: 'true' == System.getenv('CI'),
-    minSdkVersion: 16,
-    targetSdkVersion: 27,
-    gradlePlugins: [
-        android: 'com.android.tools.build:gradle:3.0.1',
-    ],
-    guava: "com.google.guava:guava:24.0-jre",
+        buildToolsVersion: '25.0.2',
+        compileSdkVersion: 25,
+        ci               : 'true' == System.getenv('CI'),
+        minSdkVersion    : 16,
+        targetSdkVersion : 25,
+
+        gradlePlugins    : [
+                android: 'com.android.tools.build:gradle:2.3.1',
+        ],
+        guava            : "com.google.guava:guava:20.0",
 ]
 
 def apt = [
-    androidApi: "com.google.android:android:4.1.1.4",
-    autoCommon: "com.google.auto:auto-common:0.10",
-    autoService: "com.google.auto.service:auto-service:1.0-rc4",
-    autoValue: "com.google.auto.value:auto-value:1.5.3",
-    javapoet: "com.squareup:javapoet:1.10.0",
+        androidApi : "com.google.android:android:4.1.1.4",
+        autoCommon : "com.google.auto:auto-common:0.8",
+        autoService: "com.google.auto.service:auto-service:1.0-rc3",
+        autoValue  : "com.google.auto.value:auto-value:1.4.1",
+        javapoet   : "com.squareup:javapoet:1.8.0",
 ]
 
 def external = [
-    gson: "com.google.code.gson:gson:2.8.1",
+        gson: "com.google.code.gson:gson:2.8.1",
 ]
 
 def support = [
-    annotations: "com.android.support:support-annotations:${versions.support}",
-    appcompat: "com.android.support:appcompat-v7:${versions.support}"
+        annotations: "com.android.support:support-annotations:${versions.support}",
+        appcompat  : "com.android.support:appcompat-v7:${versions.support}"
 ]
 
 def test = [
-    compileTesting: "com.google.testing.compile:compile-testing:0.13",
-    junit: 'junit:junit:4.12',
+        compileTesting: "com.google.testing.compile:compile-testing:0.11",
+        junit         : 'junit:junit:4.12',
 ]
 
 ext.deps = [
-    "apt": apt,
-    "build": build,
-    "external": external,
-    "support": support,
-    "test": test,
+        "apt"     : apt,
+        "build"   : build,
+        "external": external,
+        "support" : support,
+        "test"    : test,
 ]
