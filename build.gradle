@@ -15,33 +15,31 @@
  */
 
 subprojects {
-  buildscript {
-    repositories {
-      jcenter()
-      google()
+    apply from: rootProject.file('gradle/dependencies.gradle')
+    buildscript {
+        repositories {
+            jcenter()
+            google()
+        }
     }
-  }
 
-  repositories {
-    jcenter()
-    google()
-  }
+    repositories {
+        jcenter()
+        google()
+    }
 
-  apply plugin: 'checkstyle'
-
-  checkstyle { ->
-    rootProject
-    configFile rootProject.file('config/checkstyle/checkstyle.xml')
-  }
+    afterEvaluate {
+        if (plugins.hasPlugin('com.android.library')) {
+            project.android.libraryVariants.all {
+                it.generateBuildConfig.enabled = false
+            }
+        }
+    }
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '4.6'
-  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
-}
-
-task clean(type: Delete) {
-  delete rootProject.buildDir
+    gradleVersion = '4.6'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
 
 apply from: 'gradle/dependencies.gradle'
