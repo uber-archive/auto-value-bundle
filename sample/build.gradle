@@ -59,13 +59,13 @@ check.dependsOn 'checkstyle'
 
 dependencies {
   annotationProcessor deps.apt.autoValue
-  annotationProcessor project(":autovalue-bundle-extension")
+  annotationProcessor project(":auto-value-bundle")
 
   implementation deps.support.appcompat
   implementation deps.apt.autoValue
   implementation deps.external.gson
 
-  compileOnly project(":autovalue-bundle-extension")
+  compileOnly project(":auto-value-bundle")
 
   testCompile deps.test.junit
 }
